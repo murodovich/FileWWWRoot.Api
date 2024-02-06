@@ -2,7 +2,6 @@
 using FileWwwroot.Api.Dtos;
 using FileWwwroot.Api.Entities;
 using Microsoft.EntityFrameworkCore;
-
 namespace FileWwwroot.Api.Services
 {
     public class UserService : IUserService
@@ -11,7 +10,7 @@ namespace FileWwwroot.Api.Services
         private readonly IFileService _fileService;
         private readonly IWebHostEnvironment _environment;
 
-        public UserService(FileImageDBContext dbContext, IFileService fileService , IWebHostEnvironment environment)
+        public UserService(FileImageDBContext dbContext, IFileService fileService, IWebHostEnvironment environment)
         {
             _dbContext = dbContext;
             _fileService = fileService;
@@ -28,10 +27,10 @@ namespace FileWwwroot.Api.Services
             await _dbContext.Users.AddAsync(user);
             var result = await _dbContext.SaveChangesAsync();
             return result;
-                       
+
         }
 
-        public async  ValueTask<IEnumerable<UserResDto>> GetAllAsync()
+        public async ValueTask<IEnumerable<UserResDto>> GetAllAsync()
         {
             IEnumerable<User> users = await _dbContext.Users.ToListAsync();
 
@@ -67,7 +66,7 @@ namespace FileWwwroot.Api.Services
 
                 return userResponse;
             }
-            
+
 
             if (user != null)
             {
