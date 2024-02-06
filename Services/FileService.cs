@@ -1,7 +1,4 @@
-﻿
-using FileWwwroot.Api.Data;
-using Microsoft.AspNetCore.Http;
-
+﻿using FileWwwroot.Api.Data;
 namespace FileWwwroot.Api.Services
 {
     public class FileService : IFileService
